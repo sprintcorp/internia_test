@@ -59,9 +59,12 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Employee $employee)
     {
-        //
+        $data = $request->all();     
+        
+        return ($record = $employee->update($data)) ? $this->successResponse("Employee Updated Successfully",200) : $this->errorResponse('Employee not updated',400);
+        
     }
 
     /**
@@ -72,7 +75,11 @@ class EmployeeController extends Controller
      */
     public function destroy(Employee $employee)
     {
-        $employee->delete();
-        // return $this->successResponse->("Employee Record Deleted",200);
+        try {
+            $employee->delete();
+            return $this->successResponse("Employee record deleted",200);
+        } catch (\Exception $e) {
+            return $this->errorResponse($e->getMessage(),404);
+        }
     }
 }
