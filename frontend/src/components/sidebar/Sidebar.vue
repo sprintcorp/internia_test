@@ -16,35 +16,35 @@
             <b-nav-item >
                 <b-img v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
                 <i class="fa fa-history"></i>
-                <span class="px-3">Arena Sport</span>
+                <span class="px-3">All Employees</span>
                 <i class="fa fa-caret-down"></i>
             </b-nav-item>
 
             <b-nav-item >
                 <b-img v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
                 <i class="fa fa-history"></i>
-                <span class="px-3">DSV</span>
+                <span class="px-3">All Employees</span>
                 <i class="fa fa-caret-down"></i>
             </b-nav-item>
 
             <b-nav-item >
                 <b-img v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
                 <i class="fa fa-history"></i>
-                <span class="px-3">Seafood Mall</span>
+                <span class="px-3">All Employees</span>
                 <i class="fa fa-caret-down"></i>
             </b-nav-item>
 
             <b-nav-item >
                 <b-img v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
                 <i class="fa fa-history"></i>
-                <span class="px-3">Fire Star</span>
+                <span class="px-3">All Employees</span>
                 <i class="fa fa-caret-down"></i>
             </b-nav-item>
 
             <b-nav-item >
                 <b-img v-bind="mainProps" rounded="circle" alt="Circle image"></b-img>
                 <i class="fa fa-history"></i>
-                <span class="px-3">Zeta Bank</span>
+                <span class="px-3">All Employees</span>
                 <i class="fa fa-caret-down"></i>
             </b-nav-item>
 
@@ -53,13 +53,13 @@
             <b-nav-item >
                
                 <i class="fa fa-history"></i>
-                <span class="px-3">Full Time</span>
+                <span class="px-3">All Employees</span>
                 <i class="fa fa-caret-down"></i>
             </b-nav-item>
 
             <b-nav-item >
                 <i class="fa fa-history"></i>
-                <span class="px-3">Part Time</span>
+                <span class="px-3">All Employees</span>
                 <i class="fa fa-caret-down"></i>
             </b-nav-item>
 
