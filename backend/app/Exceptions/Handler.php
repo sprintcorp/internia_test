@@ -55,7 +55,7 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        //Handles Query Exception
+        //Handles Query exception
         if($exception instanceof QueryException){
             return response()->json(['error' =>$exception->getMessage()],500);
         }
