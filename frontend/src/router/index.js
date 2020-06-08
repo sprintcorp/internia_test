@@ -21,16 +21,7 @@ let router = new Router({
                 name: 'employees-overview',
                 component: () => import('../pages/employees/employees-overview/EmployeesOverview.vue')
             },
-            // {
-            //     path: '/edit-employee/:employeeId',
-            //     name: 'edit-employee',
-            //     component: () => import('../pages/employees/edit-employee/EditEmployee.vue')
-            // },
-            // {
-            //     path: '/add-employee',
-            //     name: 'add-employee',
-            //     component: () => import('../pages/employees/edit-employee/EditEmployee.vue')
-            // }
+           
         ]
 
        }]
