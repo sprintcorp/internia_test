@@ -67,6 +67,7 @@ export default {
       this.$store.dispatch(CREATE_EMPLOYEE, formData).then(
         () => {
           alert(" Employee Record Created");
+          this.getEmployee();
           this.resetEmployeeDetails();
         },
           () => {
@@ -87,6 +88,7 @@ export default {
         .then(
           () => {
             alert(" Employee Record Updated");
+            this.getEmployee();
             this.resetEmployeeDetails();
           },
             () => {
