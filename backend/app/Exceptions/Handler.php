@@ -2,8 +2,13 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Database\QueryException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Illuminate\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {
@@ -50,6 +55,27 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        //Handles Query Exception
+        if($exception instanceof QueryException){
+            return response()->json(['error' =>$exception->getMessage()],500);
+        }
+        //Handles Http not found exception
+        if($exception instanceof NotFoundHttpException){
+            return response()->json(['error' =>$exception->getMessage()],404);
+        }
+        //Handle Validation exceptions
+        if($exception instanceof ValidationException){
+            return $this->convertValidationExceptionToResponse($exception,$request);
+        }
+        //Handle model exceptions
+        if($exception instanceof ModelNotFoundException){
+            $modelName = strtolower(class_basename($exception->getModel()));
+            return $this->errorResponse("No {$modelName} exist with this Identifier",404);
+        }
+        //Handle MethodnotAllowed exception
+        if($exception instanceof MethodNotAllowedHttpException){
+            return $this->errorResponse('The specified method for this request is invalid',405);
+        }
         return parent::render($request, $exception);
     }
 }
