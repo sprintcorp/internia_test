@@ -64,15 +64,15 @@ export default {
       formData.append("employment_type", this.employment_type);
       formData.append("employment_status", this.employment_status);
       console.log(formData);
-      this.$store.dispatch(CREATE_EMPLOYEE, formData).then(() => {
+      this.$store.dispatch(CREATE_EMPLOYEE, formData).then(
         () => {
           alert(" Employee Record Created");
           this.resetEmployeeDetails();
         },
           () => {
             alert(" Record Not Created");
-          };
-      });
+          }
+      );
     },
     handleUpdate(employee_id) {
       let formData = new Object();
@@ -84,15 +84,15 @@ export default {
       console.log(this.image);
       this.$store
         .dispatch(UPDATE_EMPLOYEE, { data: formData, user: employee_id })
-        .then(() => {
+        .then(
           () => {
             alert(" Employee Record Updated");
             this.resetEmployeeDetails();
           },
             () => {
               alert(" Record Not Updated");
-            };
-        });
+            }
+        );
     },
     getEmployee() {
       this.$store
