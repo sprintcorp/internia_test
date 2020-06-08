@@ -66,11 +66,11 @@ export default {
       console.log(formData);
       this.$store.dispatch(CREATE_EMPLOYEE, formData).then(() => {
         () => {
-          alert(payload.name + " Employee Record Created");
+          alert(" Employee Record Created");
           this.resetEmployeeDetails();
         },
           () => {
-            alert(payload.name + " Record Not Created");
+            alert(" Record Not Created");
           };
       });
     },
@@ -86,11 +86,11 @@ export default {
         .dispatch(UPDATE_EMPLOYEE, { data: formData, user: employee_id })
         .then(() => {
           () => {
-            alert(payload.name + " Employee Record Updated");
+            alert(" Employee Record Updated");
             this.resetEmployeeDetails();
           },
             () => {
-              alert(payload.name + " Record Not Updated");
+              alert(" Record Not Updated");
             };
         });
     },
